@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Contactos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Contactos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Mis Contactos</ion-card-title>
+      <ion-card-subtitle>En esta sección encontraras mis contactos</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid *ngFor="let item of arrayData;">
+        <ion-row>
+          <ion-col>Mi nombre: </ion-col>
+          <ion-col> {{item.name}} </ion-col>
+          <ion-col>Telefono: </ion-col>
+          <ion-col> {{item.tel}} </ion-col>
+          <ion-col>Parentezo: </ion-col>
+          <ion-col> {{item.par}} </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>     
+  </ion-card> 
+
+
+</ion-content>

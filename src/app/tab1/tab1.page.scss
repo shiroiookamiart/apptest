@@ -1,0 +1,11 @@
+.align-center{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.text-center{
+    text-align: center;
+}
