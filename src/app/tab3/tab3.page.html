@@ -34,5 +34,44 @@
     </ion-card-content>     
   </ion-card> 
 
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="setOpen(true)">
+      <ion-icon :icon="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Registar nuevo contacto</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <form [formGroup]="contactos" (submit)="createNewContact()">
+          <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Telefono:</ion-label>
+            <ion-input formControlName="tel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Parentezo:</ion-label>
+            <ion-input formControlName="par"></ion-input>
+          </ion-item>
+          <div class="align-center text-center">
+            <ion-button expand="full" type="submit">Guardar</ion-button>
+          </div>  
+        </form>  
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+  <ion-alert [isOpen]="isAlertOpen" header="Alerta" message="Uno o mas campos estan vacios" [buttons]="alertBtn" (didDismiss)="setOpenAlert(false)"></ion-alert>
 
 </ion-content>
